@@ -5,19 +5,7 @@ using Sample.WebApi.Server.Utilities;
 var builder = WebApplication.CreateBuilder(args);
 
 
-
-//builder.Services.AddMinio(accessKey, secretKey);
-//// 
-//// Add Minio using the custom endpoint and configure additional settings for default MinioClient initialization
-//builder.Services.AddMinio(configureClient => configureClient
-//.WithEndpoint(endpoint)
-//.WithCredentials(accessKey, secretKey)
-//.WithSSL(secure)
-//    );
-
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
 
@@ -28,8 +16,8 @@ app.MapGet("/generate", async () =>
     {
 
         var endpoint = "127.0.0.1:9000";
-        var accessKey = "Rmx1Az8VlL2jPVmTTSXu"; //"4sBikuqLwFiX3zc2rRxp";
-        var secretKey = "9eBXFHd6pDI10CV9AxyPvsoocGKPmcH1LHa9Lqf1"; //"DNyoXDFQWQXJGGCYY4gbH6FiZxqJN8DTrN5yCBvX";
+        var accessKey = "Rmx1Az8VlL2jPVmTTSXu"; 
+        var secretKey = "9eBXFHd6pDI10CV9AxyPvsoocGKPmcH1LHa9Lqf1"; 
         var secure = false;
 
 
@@ -80,11 +68,7 @@ app.MapGet("/generate", async () =>
         byte[] certData = stream.ToArray();
 
         File.WriteAllBytes("certificate.pfx", certData);
-
-
-      
-
-
+        
     }
     catch (Exception e)
     {
