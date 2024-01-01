@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 var endpoint = "127.0.0.1:9000";
-var accessKey = "Rmx1Az8VlL2jPVmTTSXu";
-var secretKey = "9eBXFHd6pDI10CV9AxyPvsoocGKPmcH1LHa9Lqf1";
+var accessKey = "minioadmin";
+var secretKey = "minioadmin";
 var secure = false;
 
 
@@ -17,11 +17,6 @@ var secure = false;
 //    .WithSSL(secure)
 //    .Build();
 
-
-// Add Minio using the default endpoint
-//builder.Services.AddMinio(accessKey, secretKey);
-
-// Add Minio using the custom endpoint and configure additional settings for default MinioClient initialization
 builder.Services.AddMinio(configureClient => configureClient
     .WithEndpoint(endpoint)
     .WithCredentials(accessKey, secretKey)
@@ -91,16 +86,6 @@ app.MapGet("/generate", async (IMinioClient minioClient) =>
 
         byte[] certData = stream.ToArray();
 
-        var getObjectUsingETag = new GetObjectArgs()
-            .WithBucket(bucketName)
-            .WithMatchETag(objectStat.ETag)
-            .WithCallbackStream(x => x.CopyTo(stream));
-
-        await minioClient.GetObjectAsync(getObjectUsingETag);
-
-        byte[] cert2Data = stream.ToArray();
-
-        var result=cert2Data == certData;
         // Convert the stream to byte[]
 
         File.WriteAllBytes("certificate.pfx", certData);
