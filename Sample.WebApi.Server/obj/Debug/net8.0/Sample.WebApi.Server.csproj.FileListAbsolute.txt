@@ -30,3 +30,4 @@ C:\Users\z.daneshi\Desktop\WorkingWithMinIo\Sample.WebApi.Server\obj\Debug\net8.
 C:\Users\z.daneshi\Desktop\WorkingWithMinIo\Sample.WebApi.Server\obj\Debug\net8.0\Sample.WebApi.Server.pdb
 C:\Users\z.daneshi\Desktop\WorkingWithMinIo\Sample.WebApi.Server\obj\Debug\net8.0\Sample.WebApi.Server.genruntimeconfig.cache
 C:\Users\z.daneshi\Desktop\WorkingWithMinIo\Sample.WebApi.Server\obj\Debug\net8.0\ref\Sample.WebApi.Server.dll
+C:\Users\z.daneshi\Desktop\WorkingWithMinIo\Sample.WebApi.Server\obj\Debug\net8.0\Sample.WebApi.Server.sourcelink.json
